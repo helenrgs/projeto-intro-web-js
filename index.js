@@ -14,7 +14,7 @@ const cursos = [
     },
     {
         nome: "JavaScript",
-        descricao:"",
+        descricao: "",
         duracao: "2 meses",
         valor: 900
     },
@@ -102,9 +102,10 @@ const turmas = [
     }
     
 ];
+
 const estudantes = [
     {
-        estudante: "Chris Evans",
+        estudante:"Chris Evans",
         turma: "Hipátia",
         curso: "JavaScript",
         valor:  "900",
@@ -112,6 +113,7 @@ const estudantes = [
         desconto:   false,
         valorParcelas: 100
     },
+
     {
         estudante: "Halle Berry",
         turma: "Burnell",
@@ -121,8 +123,9 @@ const estudantes = [
         desconto:   false,
         valorParcelas: 500
     },
+
     {
-        estudante:  "Lashana Lynch",
+        estudante: "Lashana Lynch",
         turma: "Zhenyi",
         curso: "HTML e CSS",
         numeroDeParcelas: 1,
@@ -131,19 +134,145 @@ const estudantes = [
     }
 ];
 
-const parcelarCurso = (numeroDeParcelas) => {
-    valorCurso = cursos[2].valor;
-    if (numeroDeParcelas <= 2) {
+// const parcelarCurso = (numeroDeParcelas) => {
+//     valorCurso = cursos[2].valor;
+//     if (numeroDeParcelas <= 2) {
 
-        desconto = 0.2;
-        valorTotal = valorCurso*desconto;
-        parcela = valorTotal/numeroDeParcelas;
-        console.log(`O curso ${cursos[2].nome} ficou no valor total de R$ ${valorTotal.toFixed(2)} em ${numeroDeParcelas}x de ${parcela.toFixed(2)} reais. Foi concedido desconto de 20%`)
+//         desconto = 0.2;
+//         valorTotal = valorCurso*desconto;
+//         parcela = valorTotal/numeroDeParcelas;
+//         console.log(`O curso ${cursos[2].nome} ficou no valor total de R$ ${valorTotal.toFixed(2)} em ${numeroDeParcelas}x de ${parcela.toFixed(2)} reais. Foi concedido desconto de 20%`)
     
-    }else{
-        valorTotal = valorCurso;
-        parcela = valorCurso/numeroDeParcelas;
-        console.log(`O curso ${cursos[2].nome} ficou no valor total de R$ ${cursos[2].valor} em ${numeroDeParcelas}x de ${parcela} reais`)
+//     }else{
+//         valorTotal = valorCurso;
+//         parcela = valorCurso/numeroDeParcelas;
+//         console.log(`O curso ${cursos[2].nome} ficou no valor total de R$ ${cursos[2].valor} em ${numeroDeParcelas}x de ${parcela} reais`)
+//     }
+
+// }
+
+//parcelar curso modificada
+
+parcelarCurso = (carrinhoCursos, nParcelas) => {
+    var soma = carrinhoCursos.reduce(function(soma,i) {
+        return soma + i
+    })
+
+    arrTam = carrinhoCursos.length; 
+    let parcelas = 0;
+    switch (arrTam) {
+        case 3:
+            desconto = "15%"
+            soma = soma*0.15;
+            if(nParcelas<=2){
+                soma = soma*0.2;
+                desconto = "15% + 20%"
+                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+            }else{
+                return console.log(`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+
+            }
+
+        case 2:
+            desconto = "10%"
+            soma = soma*0.1;  
+            if(nParcelas<=2){
+                desconto = "10%+20%"
+                soma = soma*0.2;
+                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto} de desconto, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+
+            }else{
+                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+
+            }
+        case 1:
+            soma = soma; 
+        
+            if(nParcelas<=2){
+                soma = soma*0.2;
+                desconto = "20%"
+                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+            }else{
+                return (`O valor do pagamento é de ${soma} reais, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+            }
+    }
+}
+
+console.log((parcelarCurso([500,900,400],6)))
+
+//loops 
+
+buscarCurso = (nomeCurso) => {
+    for (i in cursos) {
+        if (cursos[i].nome = nomeCurso) {
+            return cursos[i]; 
+        }
+    
+    }
+}
+
+buscarTurma = (nomeTurma) => {
+    let temNaBase = false; 
+    for (i in turmas) {
+        if (turmas[i].turma = nomeTurma) {
+            temNaBase = true; 
+            return turmas[i]; 
+        }
+    if (temNaBase == false) {
+        return "Não encontramos!";
+    }
+    }
+}
+
+buscarEstudante = (nomeEstudante) => {
+    let temNaBase = false; 
+    for (estudante in estudantes) {
+        if (estudantes[i].estudante = nomeEstudante) {
+            temNaBase = true; 
+            return estudantes[i]; 
+        }
+    if (temNaBase == false) {
+        return "Não encontramos!";
+    }
+    }
+}
+
+console.log(buscarCurso("JavaScript"))
+console.log(buscarCurso("Ruby")) //expected: "não encontramos"
+console.log(buscarTurma("Sibyla"))
+console.log(buscarEstudante("Lashana Lynch"))
+
+
+matricular = (nomeAluno, nomeCurso, nomeTurma, numeroDeParcelas) => {
+
+    matricula = {},
+    matricula.estudante = nomeAluno;
+    matricula.curso = nomeCurso;
+    matricula.turma = nomeTurma;
+    matricula.numeroDeParcelas = numeroDeParcelas;
+
+    for (i in cursos) {
+        if (cursos[i].nome = nomeCurso) {
+            matricula.valor = cursos[i].valor; 
+        }
+
     }
 
+    if (numeroDeParcelas <= 2) {
+        desconto = 0.2;
+        matricula.desconto = true; 
+        matricula.valorParcelas = ((0.2*matricula.valor)/(numeroDeParcelas)).toFixed(2);
+    }else{
+        matricula.desconto = false; 
+        matricula.valorParcelas = ((matricula.valor)/(numeroDeParcelas)).toFixed(2);
+    }
+    
+    estudantes.push(matricula)
+    console.log(` Aluno Matriculado \n Nome: ${nomeAluno} \n Curso: ${nomeCurso} \n Turma: ${nomeTurma}
+    `)
+    return estudantes; 
+
+    
 }
+
+console.log(matricular("Helen", "JavaScript","Hipátia", 4))
