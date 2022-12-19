@@ -154,22 +154,19 @@ const estudantes = [
 //parcelar curso modificada
 
 parcelarCurso = (carrinhoCursos, nParcelas) => {
-    var soma = carrinhoCursos.reduce(function(soma,i) {
-        return soma + i
-    })
-
+    var soma = carrinhoCursos.reduce((partialSum, a) => partialSum + a, 0);
+    var desconto = "";
     arrTam = carrinhoCursos.length; 
-    let parcelas = 0;
     switch (arrTam) {
         case 3:
             desconto = "15%"
             soma = soma*0.15;
             if(nParcelas<=2){
+                desconto = "15% + 20%";
                 soma = soma*0.2;
-                desconto = "15% + 20%"
-                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$ ${(soma/nParcelas.toFixed(3))}`);
             }else{
-                return console.log(`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$ ${(soma/nParcelas.toFixed(3))}`);
 
             }
 
@@ -179,68 +176,71 @@ parcelarCurso = (carrinhoCursos, nParcelas) => {
             if(nParcelas<=2){
                 desconto = "10%+20%"
                 soma = soma*0.2;
-                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto} de desconto, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto} de desconto, parcelado em ${nParcelas}x de R$${(soma/nParcelas)}`);
 
             }else{
-                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$${(soma/nParcelas)}`);
 
             }
         case 1:
             soma = soma; 
-        
             if(nParcelas<=2){
                 soma = soma*0.2;
                 desconto = "20%"
-                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+                return (`O valor do pagamento é de ${soma} reais com desconto de ${desconto}, parcelado em ${nParcelas}x de R$${(soma/nParcelas)}`);
             }else{
-                return (`O valor do pagamento é de ${soma} reais, parcelado em ${nParcelas}x de R$${soma/nParcelas.toFixed(2)}`);
+                return (`O valor do pagamento é de ${soma} reais, parcelado em ${nParcelas}x de R$${(soma/nParcelas)}`);
             }
     }
 }
 
-console.log((parcelarCurso([500,900,400],6)))
+// console.log(parcelarCurso([500,400,900], 1))
 
 //loops 
 
-buscarCurso = (nomeCurso) => {
-    for (i in cursos) {
-        if (cursos[i].nome = nomeCurso) {
-            return cursos[i]; 
-        }
-    
-    }
-}
+//função buscarCurso
 
-buscarTurma = (nomeTurma) => {
-    let temNaBase = false; 
-    for (i in turmas) {
-        if (turmas[i].turma = nomeTurma) {
-            temNaBase = true; 
-            return turmas[i]; 
-        }
-    if (temNaBase == false) {
-        return "Não encontramos!";
-    }
-    }
-}
+// buscarCurso = (nomeCurso) => {
+//     for (i in cursos) {
+//         if (cursos[i].nome == nomeCurso) {
+//             var curso = cursos[i]
+//             return curso; 
 
-buscarEstudante = (nomeEstudante) => {
-    let temNaBase = false; 
-    for (estudante in estudantes) {
-        if (estudantes[i].estudante = nomeEstudante) {
-            temNaBase = true; 
-            return estudantes[i]; 
-        }
-    if (temNaBase == false) {
-        return "Não encontramos!";
-    }
-    }
-}
+//         }
+//     }
+// }
 
-console.log(buscarCurso("JavaScript"))
-console.log(buscarCurso("Ruby")) //expected: "não encontramos"
-console.log(buscarTurma("Sibyla"))
-console.log(buscarEstudante("Lashana Lynch"))
+
+// buscarTurma = (nomeTurma) => {
+//     let temNaBase = false; 
+//     for (i in turmas) {
+//         if (turmas[i].turma == nomeTurma) {
+//             temNaBase = true; 
+//             return turmas[i]; 
+//         }
+//     if (temNaBase == false) {
+//         return "Não encontramos!";
+//     }
+//     }
+// }
+
+// buscarEstudante = (nomeEstudante) => {
+//     let temNaBase = false; 
+//     for (estudante in estudantes) {
+//         if (estudantes[i].estudante = nomeEstudante) {
+//             temNaBase = true; 
+//             return estudantes[i]; 
+//         }
+//     if (temNaBase == false) {
+//         return "Não encontramos!";
+//     }
+//     }
+// }
+
+// console.log(buscarCurso("JavaScript"))
+// console.log(buscarCurso("Ruby")) //expected: "não encontramos"
+// console.log(buscarTurma("Sibyla"))
+// console.log(buscarEstudante("Lashana Lynch"))
 
 
 matricular = (nomeAluno, nomeCurso, nomeTurma, numeroDeParcelas) => {
@@ -252,7 +252,7 @@ matricular = (nomeAluno, nomeCurso, nomeTurma, numeroDeParcelas) => {
     matricula.numeroDeParcelas = numeroDeParcelas;
 
     for (i in cursos) {
-        if (cursos[i].nome = nomeCurso) {
+        if (cursos[i].nome == nomeCurso) {
             matricula.valor = cursos[i].valor; 
         }
 
@@ -275,4 +275,68 @@ matricular = (nomeAluno, nomeCurso, nomeTurma, numeroDeParcelas) => {
     
 }
 
-console.log(matricular("Helen", "JavaScript","Hipátia", 4))
+//funções de Array 
+
+addCarrinhoCursos = (nomeCurso) => {
+    carrinhoCursos = [];
+    var curso = buscarCurso(nomeCurso)
+    carrinhoCursos.push(curso.valor);
+    return carrinhoCursos
+}
+
+// console.log(addCarrinhoCursos("JavaScript"));
+
+//relatorioEstudante
+
+relatorioEstudante = (nomeEstudante) => {
+    let objEstudante = (buscarEstudante(nomeEstudante))
+    return (` Aluno: ${objEstudante.estudante} \n Turma: ${objEstudante.turma} \n Curso: ${objEstudante.curso} \n Valor Total: ${objEstudante.valor} reais \n Valor Parcela: ${objEstudante.valorParcelas} \n Nº Parcelas: ${objEstudante.numeroDeParcelas}
+    `)
+
+}
+
+// console.log(relatorioEstudante("Chris Evans"))
+
+//alterando buscarTurma 
+
+const buscarTurma = (nomeTurma) => {
+    const resultadoTurma = turmas.filter(obj => obj.turma == nomeTurma)
+    resultadoTurma.length === 0 ? console.log("Turma não encontrada!") : console.log("Turma\n", resultadoTurma)
+    return resultadoTurma  
+}
+
+// console.log(buscarTurma("Elion"))
+// console.log(buscarTurma("Hipátia"))
+
+
+//buscarEstudante
+
+buscarEstudante = (nomeEstudante) => {
+    const resultadoEstudante = estudantes.filter(obj => obj.estudante.startsWith(nomeEstudante))
+    if (typeof resultadoEstudante == undefined) {
+        console.log("Aluno não encontrado")
+    }
+    return resultadoEstudante
+}
+
+// console.log(buscarEstudante("Chris"))
+
+//função buscarCursoMelhorada
+const buscarCurso = (nomeCurso) => {
+    const resultadoCurso = cursos.find(obj => obj.nome === nomeCurso)
+    if (typeof resultadoCurso == "undefined")
+        return "curso não encontrado!"
+    return resultadoCurso
+}
+
+console.log(buscarCurso("JavaScript"))
+    // let temNaBase = false; 
+    // for (i in turmas) {
+    //     if (turmas[i].turma == nomeTurma) {
+    //         temNaBase = true; 
+    //         return turmas[i]; 
+    //     }
+    // if (temNaBase == false) {
+    //     return "Não encontramos!";
+    // }
+    // }
