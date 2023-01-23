@@ -1,0 +1,151 @@
+.nav-header {
+    background-color: var(--color-header);
+}
+
+.logo {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 0.5rem;
+}
+
+.nav-list {
+    display:flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+}
+
+.main-banner {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding: 10rem 1rem 8rem 1rem;
+    background-color: var(--curso-background-color);    
+    text-align: center;  
+    background-image: url(imgs/background-hero.svg);
+    background-size: cover;
+}
+
+#main-title {
+    font-size: 3rem;
+    font-weight: var(--fw-bold);
+}
+
+.description-about-us {
+    padding: 0 2rem;
+}
+
+#main-bttn{
+    background-color: var(--text-color);
+    border-radius: 9px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    margin-top: 2rem;
+    padding: 0.5rem 1em;
+}
+
+.about-main {
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+}
+
+.subtitle-main{
+    margin-bottom: 1rem;
+    font-size:2em;
+}
+
+#about-us {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1rem;
+    line-height: 2.5em;
+}
+
+.subtitle-main {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.photo-testimonial {
+    width: 40%;
+    height: auto;
+}
+
+#testimonials {
+    padding: 2rem;
+}
+
+.cards-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cards-main-n {
+    width: 70%;
+    height: fit-content;
+    padding: 1.5rem 0;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.5rem;
+}
+
+
+.card-description {
+    margin: 0 1rem;
+}
+
+footer {
+    background-color: var(--curso-background-color);
+}
+
+#logo-footer {
+    display: block;
+    margin: 0 auto;
+}
+
+#iframe-maps {
+    display: none;
+}
+
+.title-footer {
+    font-size: 1.2em;
+    font-weight: var(--fw-bold);
+    line-height: 2.25em;
+}
+
+.link-footer {
+    line-height: 1.8em;
+}
+
+#text-adress {
+    line-height: 1.8em;
+}
+
+.nav-content {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+#WhatsApp {
+    position: fixed;
+    left: 95%;
+    top: 85%;
+    float: right;
+}
+
+
