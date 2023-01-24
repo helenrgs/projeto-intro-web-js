@@ -5,35 +5,36 @@
     <meta charset="utf-8">
     <title>Contato - LabEscola</title>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="basics.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="queries.css">
+    <link rel="stylesheet" href="contato.css">
 </head>
 
 <body>
     <header>
-        <a href="index.html">
-            <img src="./imgs/Frame 2.png" alt="logo-LabEscola" id="logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="adm.html">Área Adm</a></li>
+        <nav class="nav-header">
+            <a href="index.html"><img src="imgs/Frame 2.svg" alt="logo-LabEscola" class="logo"></a>
+            <ul class="nav-list">
+                <li><a class="nav-links" href="./index.html">Home</a></li>
+                <li><a class="nav-links" href="./cursos.html">Cursos</a></li>
+                <li><a class="nav-links" href="./contato.html">Contato</a></li>
+                <li><a class="nav-links" href="./adm.html">Área ADM</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h3 id="form-title">Fale conosco</h3>
-            <form action="#" method="#">
-                <label class="form-sub" for="fname">Nome</label><br>
-                <input type="text" id="fname" name="fname"><br>
-                <label class="form-sub" for="email">Email</label><br>
-                <input type="email" id="email" name="email"><br>
-                <label class="form-sub" for="message">Mensagem</label><br>
-                <textarea rows="10" cols="30" name="mmessage" maxlength="300" minlength="10"></textarea>
-                <input class="form-sub" type="submit" id="bttn" value="Enviar"><br>
-
+        <section class="section-contact">
+            <form id="form" action="#" method="#">
+                <h3 id="form-title">Fale conosco</h3>
+                <label class="form-sub" for="fname">Nome</label>
+                <input type="text" id="fname" name="fname">
+                <label class="form-sub" for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <label class="form-sub" for="message">Mensagem</label>
+                <textarea rows="5" cols="30" name="mmessage" maxlength="300" minlength="10" id="message"></textarea>
+                <input class="form-sub" type="submit" id="bttn" value="Enviar">
             </form>
         </section>
 
@@ -42,48 +43,53 @@
     <footer>
         <figure>
             <a id="WhatsApp" href="https://web.whatsapp.com" target="_blank">
-                <img src="imgs/logos_whatsapp-icon.png" alt="logo-whatsapp">
+                <img src="imgs/logos_whatsapp-icon.png" alt="logo-whatsapp" width="70%">
             </a>
         </figure>
-        <figure>
-            <img id="logo-footer" src="/imgs/Frame 2.png" alt="logo-labescola">
-        </figure>
-        <div id="adress">
-            <p class="title-footer">Endereço</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.9962768688824!2d-46.6985022!3d-23.5685772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57a7c7ace4c3%3A0x586759cab9b5c95a!2sR.%20Pais%20Leme%2C%20215%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005424-150!5e0!3m2!1spt-BR!2sbr!4v1673289993464!5m2!1spt-BR!2sbr" width="449" height="269" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <p class="content-footer">R. Pais Leme, 215. CEP 05424-150 - Pinheiros</p>
+        <div class="footer-content">
+            <figure>
+                <img id="logo-footer" src="imgs/Frame 2.svg" alt="logo-labescola">
+            </figure>
+            <section class="nav-content">
+                <div id="adress" class="footer-container">
+                    <p class="title-footer">Endereço</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.996414200124!2d-46.70069088535578!3d-23.568572267742976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57a7c7ace4c3%3A0x586759cab9b5c95a!2sR.%20Pais%20Leme%2C%20215%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005424-150!5e0!3m2!1spt-BR!2sbr!4v1670983695754!5m2!1spt-BR!2sbr" id="iframe-maps" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" target="_blank"></iframe>
+                    <p id="text-adress">R. Pais Leme, 215. CEP 05424-150 - Pinheiros</p>
+                </div>
+                <div id="links-footer" class="footer-container">
+                    <p class="title-footer">Links</p>
+                    <nav>
+                        <ul class="link-footer">
+                            <li><a href="/index.html" id="text-footer">Home</a></li>
+                            <li><a href="/cursos.html" id="text-footer">Cursos</a></li>
+                            <li><a href="#" id="text-footer">Blog</a></li>
+                            <li><a href="#" id="text-footer">Fale conosco</a></li>
+                            <li><a href="#" id="text-footer">Termos e Condições</a></li>
+                            <li><a href="#" id="text-footer">Política de Privacidade</a></li>
+                            <li><a href="#" id="text-footer">FAQ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="social-network" class="footer-container">
+                    <p class="title-footer">Redes Sociais</p>
+                    <nav id="socialnet-footer">
+                        <a href="https://twitter.com" target="_blank"><img src="imgs/icon-twitter 1.svg" alt="logo-twitter" class="logo-network"></a>
+                        <a href="https://linkedin.com" target="_blank"><img src="imgs/icon-linkedin 1.svg" alt="logo-linkedin" class="logo-network"></a>
+                        <a href="https://facebook.com" target="_blank"><img src="imgs/icon-fb 1.svg" alt="logo-facebook" class="logo-network"></a>   
+                        <a href="https://instagram.com" target="_blank"><img src="imgs/icon-ig 1.svg" alt="logo-instagram" class="logo-network"></a>          
+                    </nav>
+                </div>
+                <div id="restricted-footer" class="footer-container">
+                    <p class="title-footer">Área Restrita</p>
+                    <nav class="nav-footer"></nav>
+                    <ul class="link-footer">
+                        <li><a href="adm.html" id="text-footer">Área Administrativa</a></li>
+                        <li><a href="#" id="text-footer">Espaço do Aluno</a></li>
+                    </ul>
+                </div>
+            </section>
         </div>
-        <div class="links-footer">
-            <p class="title-footer">Endereço</p>
-            <nav class="nav-footer">
-                <ul class="link-footer">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/cursos.html">Cursos</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Fale conosco</a></li>
-                    <li><a href="#">Termos e Condições</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="social-network">
-            <p class="title-footer">Redes Sociais</p>
-            <nav class="nav-footer">
-                <a href="https://twitter.com" target="_blank"><img src="/imgs/icon-twitter 1.svg" alt="logo-twitter"></a>
-                <a href="https://linkedin.com" target="_blank"><img src="/imgs/icon-linkedin 1.svg" alt="logo-linkedin"></a>
-                <a href="https://facebook.com" target="_blank"><img src="/imgs/icon-fb 1.svg" alt="logo-facebook"></a>   
-                <a href="https://instagram.com" target="_blank"><img src="/imgs/icon-ig 1.svg" alt="logo-instagram"></a>          
-            </nav>
-        </div>
-        <div class="restricted-footer">
-            <p class="title=footer">Área Restrita</p>
-            <nav class="nav-footer"></nav>
-            <ul>
-                <li><a href="adm.html">Área Administrativa</a></li>
-                <li><a href="#">Espaço do Aluno</a></li>
-            </ul>
-        </div>
+        
     </footer>
 </body>
 
