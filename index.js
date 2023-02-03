@@ -287,13 +287,13 @@ function parcelarCurso(event) {
     switch (arrTam) {
       case 3:
         desconto = 0.15;
-        break
+        break;
       case 2:
-        desconto = 0.10;
-        break
+        desconto = 0.1;
+        break;
       default:
         desconto = 0;
-        break
+        break;
     }
     for (const preco of carrinhoCursos) {
       precoTotal = precoTotal + preco;
@@ -313,12 +313,11 @@ function parcelarCurso(event) {
     <p>O valor do pagamento é de R$ ${precoTotal}. Em ${nParcelas}x de ${valordaParcela} reais.</p>`;
   } else {
     document.getElementById("report-value").innerHTML =
-    "<p>Desculpe, não foi possível calcular o valor! Por favor tente um novamente<p>";
+      "<p>Desculpe, não foi possível calcular o valor! Por favor tente um novamente<p>";
   }
 
   document.getElementById("cursos").value = "";
   document.getElementById("report-1").innerHTML = "";
-  
 }
 
 function studentReport(event) {
@@ -346,7 +345,6 @@ const buscarEstudante = (strStd) => {
   }
   return srchObj;
 };
-
 
 // relatorioEstudante = (nomeEstudante) => {
 //   let objStd = buscarEstudante(nomeEstudante);
