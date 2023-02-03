@@ -1,0 +1,89 @@
+main {
+  height: 85vh;
+  display: flex;
+  border-bottom: 1px solid var(--text-color);
+}
+
+#nav-adm {
+  background-color: var(--text-color);
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+}
+
+#class-adm {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  background-color: var(--curso-background-color);
+}
+
+.nav-aside-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.nav-item {
+  color: var(--secondary-color);
+  font-weight: var(--fw-bold);
+}
+
+.input-search {
+  display: flex;
+  height: 5vh;
+}
+
+#fclass {
+  border: none;
+  border-radius: 5px;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+#search-button {
+  width: fit-content;
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+  font-weight: var(--fw-bold);
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+.class-screen {
+  background-color: var(--curso-background-color);
+}
+
+#container-cards {
+  display: flex;
+  flex-flow: wrap;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  padding: 2rem;
+  font-size: 0.75em;
+}
+.card-in {
+  width: 15vw;
+  height: 25vh;
+  padding: 1.5rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.title-class {
+  font-size: 1.2em;
+  line-height: 1.5rem;
+  text-align: center;
+  font-weight: bolder;
+}

@@ -3,13 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>Área Administrativa - LabEscola</title>
+    <link rel="stylesheet" href="/matriculas.css" />
     <link rel="stylesheet" href="basics.css" />
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="queries.css" />
     <link rel="stylesheet" href="style/adm.css" />
     <script src="index.js" defer></script>
-    <script src="matriculas.js" defer></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
@@ -37,18 +36,24 @@
         </ul>
       </nav>
 
-      <div class="class-screen">
-        <section id="class-adm">
-          <div class="input-search">
-            <input type="text" id="fclass" />
-            <button onclick="buscarTurma()" id="buscarTurma">Buscar</button>
-          </div>
+      <section class="registration">
+        <form id="form-regist" action="#">
+          <h3 id="title-regist">Matrículas</h3>
+          <label for="GET-name">Nome:</label>
+          <input id="GET-name" type="text" name="name" />
+          <label for="GET-module">Curso:</label>
+          <input id="GET-module" type="text" name="module"/>
+          <label for="GET-class">Turma:</label>
+          <input id="GET-class" type="text" name="class" />
+          <label for="GET-parc">Número de Parcelas:</label>
+          <input id="GET-parc" type="number" name="parcelas" min="1" max="8" />
+          <button id="regist-bttn" onclick="matricular(event)">Matricular aluno</button>
+        </form>
+
+        <section id="report-regist"></section>
         </section>
-
-        <section id="container-cards"></section>
-      </div>
     </main>
-
+    
     <footer>
       <figure>
         <a id="WhatsApp" href="https://web.whatsapp.com" target="_blank">

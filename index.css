@@ -1,5 +1,6 @@
 .nav-header {
     background-color: var(--color-header);
+    border-bottom: 4px solid black;
 }
 
 .logo {
@@ -9,12 +10,15 @@
     padding: 0.5rem;
 }
 
+.nav-bar{
+    font-size: 1.3em;
+}
+
 .nav-list {
     display:flex;
     justify-content: space-around;
     font-weight: var(--fw-bold);
     text-transform: uppercase;
-    font-size: 2rem;
 }
 
 .main-banner {
@@ -54,7 +58,7 @@
 
 .subtitle-main{
     margin-bottom: 1rem;
-    font-size:2em;
+    font-size: 0.5em;
 }
 
 #about-us {

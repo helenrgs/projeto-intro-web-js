@@ -1,47 +1,80 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Área Administrativa - LabEscola</title>
+    <link rel="stylesheet" href="financeiro.css" />
+    <link rel="stylesheet" href="basics.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="queries.css" />
+    <link rel="stylesheet" href="style/adm.css" />
+    <script src="index.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-<head>
-    <meta charset="utf-8">
-    <title>Contato - LabEscola</title>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="basics.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="queries.css">
-    <link rel="stylesheet" href="contato.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
+  <body>
     <header>
-        <nav class="nav-header">
-            <a href="index.html"><img src="imgs/Frame 2.svg" alt="logo-LabEscola" class="logo"></a>
-            <ul class="nav-list">
-                <li><a class="nav-links" href="./index.html">Home</a></li>
-                <li><a class="nav-links" href="./cursos.html">Cursos</a></li>
-                <li><a class="nav-links" href="./contato.html">Contato</a></li>
-                <li><a class="nav-links" href="./adm.html">Área ADM</a></li>
-            </ul>
-        </nav>
+      <nav class="nav-header">
+        <a href="index.html"
+          ><img src="imgs/Frame 2.svg" alt="logo-LabEscola" class="logo"
+        /></a>
+        <ul class="nav-list">
+          <li><a class="nav-links" href="./index.html">Home</a></li>
+          <li><a class="nav-links" href="./cursos.html">Cursos</a></li>
+          <li><a class="nav-links" href="./contato.html">Contato</a></li>
+          <li><a class="nav-links" href="./adm.html">Área ADM</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section class="section-contact">
-            <form id="form" action="#" method="#">
-                <h3 id="form-title">Fale conosco</h3>
-                <label class="form-sub" for="fname">Nome</label>
-                <input type="text" id="fname" name="fname">
-                <label class="form-sub" for="email">Email</label>
-                <input type="email" id="email" name="email">
-                <label class="form-sub" for="message">Mensagem</label>
-                <textarea rows="5" cols="30" name="mmessage" maxlength="300" minlength="10" id="message"></textarea>
-                <input class="form-sub" type="submit" id="bttn" value="Enviar">
-            </form>
-        </section>
+      <nav id="nav-adm">
+        <ul class="nav-aside-list">
+          <li><a class="nav-item" href="/adm.html">Turmas</a></li>
+          <li><a class="nav-item" href="/matriculas.html">Matrículas</a></li>
+          <li><a class="nav-item" href="financeiro.html">Financeiro Alunos</a></li>
+        </ul>
+      </nav>
+      <div id="wrap-container">
+        
+      </div>
+      <section id="container-finance">
+        <div id="form-finance">
+            <form id="forms" action="#">
+                <h3 id="title-regist">Financeiro</h3>
+                <label for="get-curso">Curso</label>
+                <input onclick="showList()" type="text" id="cursos" list="cursosData" placeholder="Nome do Curso..."/>
+                <p id="add-module" onclick="addCarrinhoCursos()">Adicionar outro curso</p>
+                <label for="GET-nparc">Número de Parcelas</label>
+                <input id="GET-nparc" type="number" name="parcelas" min="1" max="12" />
+                <button id="regist-bttn" onclick="parcelarCurso(event)">Ver valor</button>
+                </form>
+                <datalist id="cursosData"></datalist>
+                <div id="report-modules">
+                  <span id="report-1"></span>
+                  <span id="report-2"></span><p></p>
+                  <span id="report-3"></span>
+                  <div id="report-value">
+                    <span class="report-financial" id="option-module"></span>
+                    <span class="text-finance" id="report"></span>
+                  </div>
 
-    </main>
+                </div>
 
-    <footer>
+        </div>
+        <div id="alumni-report">
+          <h3 id="report-title">Relatório Aluno</h3>
+          <form id="report-card">
+              <label for="get-student">Nome</label>
+              <input id="get-student" type="text" name="get-student" placeholder="Nome do estudante..."/>
+          </form>
+          <button id="reportStudent-bttn" onclick="studentReport(event)">Buscar</button>
+          <div id="card-student"></div>
+            </div>
+      </section>
+      </main>
+      
+      <footer>
         <figure>
             <a id="WhatsApp" href="https://web.whatsapp.com" target="_blank">
                 <img src="imgs/logos_whatsapp-icon.png" alt="logo-whatsapp" width="70%">
@@ -92,6 +125,6 @@
         </div>
         
     </footer>
-</body>
-
+    </body>
 </html>
+
