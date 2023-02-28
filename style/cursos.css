@@ -1,0 +1,85 @@
+.courses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--curso-background-color);
+  gap: 0.5rem;
+}
+
+.types-course {
+  width: 60vw;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.card-1,
+.card-2,
+.card-3 {
+  width: 40vw;
+  background-color: var(--secondary-color);
+  border-radius: 9px;
+  font-size: 0.5rem;
+  padding: 0.2rem;
+}
+
+.title-courses {
+  font-size: 1rem;
+}
+
+.cards-sub {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 0.5rem;
+  line-height: 1.5rem;
+}
+
+#btn-cursos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20vw;
+  height: 6vh;
+  padding: 1rem;
+  margin: 0.8rem;
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 0.8rem;
+  border-radius: 9px;
+}
+
+.description-courses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+  font-size: 0.8em;
+  font-weight: lighter;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.cards-tit {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.item-modules {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40vw;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  color: var(--text-color);
+}

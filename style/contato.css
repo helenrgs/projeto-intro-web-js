@@ -1,0 +1,48 @@
+.section-contact {
+  height: 80vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--text-color);
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border-radius: 9px;
+}
+
+#form-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+}
+
+.form-sub {
+  font-weight: var(--fw-bold);
+  margin: 0.3rem 0;
+}
+
+#bttn {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--curso-background-color);
+}
+
+#fname,
+#email,
+#message {
+  border-radius: 3px;
+  border: 1.8px solid black;
+}
+
+#fname,
+#email {
+  height: 5vh;
+}

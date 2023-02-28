@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(/assets/Poppins/Poppins-Medium.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --height-header: 13vh;
+  --color-header: #fbfbfb;
+  --text-color: #0e0e0e;
+  --secondary-color: #fbfbfb;
+  --curso-background-color: #f6c34a;
+  --fw-bold: 700;
+  --fw-lighter: 400;
+}
+
+ul,
+li a {
+  list-style: none;
+  text-decoration: none;
+  color: var(--text-color);
+}

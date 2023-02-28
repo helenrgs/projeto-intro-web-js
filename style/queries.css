@@ -1,0 +1,171 @@
+@media only screen and (min-width: 1024px) {
+  .logo {
+    width: 100%;
+    height: auto;
+  }
+  #logo-footer {
+    display: initial;
+    padding: 1rem 2rem;
+  }
+
+  .nav-list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    margin: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  .nav-links {
+    margin: 0 1.5rem;
+  }
+  .main-banner {
+    padding: 12rem;
+  }
+  .description-about-us {
+    padding: 2rem 8rem;
+  }
+  .cards-main {
+    display: flex;
+    flex-direction: row;
+  }
+  #testimonials {
+    padding: 2rem 5rem 5rem;
+  }
+
+  .courses {
+    height: 70vh;
+    gap: 2rem;
+  }
+
+  .types-course {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cards-sub {
+    font-size: 0.8rem;
+    line-height: 1.8rem;
+    padding: 0;
+  }
+
+  .description-courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+  }
+
+  .title-courses {
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+  }
+  .cards-tit {
+    font-size: 1.5rem;
+  }
+
+  .item-modules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    width: 50vw;
+    padding: 1rem;
+    line-height: 1.2rem;
+  }
+
+  .cards-desc {
+    font-size: 0.8rem;
+  }
+
+  .cards-sub {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .nav-list {
+    font-size: 10px;
+  }
+  .description-about-us {
+    padding: 0;
+  }
+  .cards-main-n {
+    width: 90%;
+    padding: 1rem 0;
+    line-height: 2em;
+    margin-bottom: 2rem;
+  }
+  #logo-footer {
+    width: 40%;
+  }
+  .logo-network {
+    width: 5%;
+  }
+  .nav-content {
+    font-size: 0.5em;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .description-about-us {
+    padding: 2rem;
+    line-height: 3rem;
+  }
+
+  #testimonials {
+    padding-top: 0;
+  }
+  .photo-testimonial {
+    width: 30%;
+  }
+  .cards-main-n {
+    overflow-wrap: break-word;
+    width: 60vw;
+    padding: 2rem 0rem;
+    line-height: 2em;
+    margin: 1rem 0rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .cards-main-n {
+    width: 60vw;
+    padding: 1rem 0rem;
+    line-height: 1.8em;
+    margin: 1.5rem 0rem;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  #iframe-maps {
+    display: block;
+    width: 80%;
+  }
+
+  .nav-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+    text-align: start;
+  }
+
+  #text-adress {
+    line-height: 4em;
+  }
+}
